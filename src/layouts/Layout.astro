@@ -1,23 +1,90 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+---
+// src/layouts/Layout.astro
+const { title = "Junior Web Developer | Portfolio" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="/" class="logo">Dev.Portfolio</a>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/progetti">Progetti</a>
+          <a href="/contatti">Contatti</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="container">
+      <p>&copy; {new Date().getFullYear()} Sviluppato con Astro.js — Nessun server da gestire!</p>
+    </footer>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  :root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --accent-color: #38bdf8;
+    --border-color: #334155;
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .nav-links a:hover {
+    color: var(--accent-color);
+  }
+  main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  footer {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
 </style>

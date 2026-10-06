@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Questa funzione legge automaticamente tutti i contenuti salvati dal pannello Admin nella cartella src/content/progetti
+const progettiCMS = await Astro.glob('../content/progetti/*.md');
+
+// Formattiamo i dati letti dal CMS
+const progetti = progettiCMS.map(p => ({
+  titolo: p.frontmatter.titolo,
+  descrizione: p.frontmatter.descrizione,
+  tags: Array.isArray(p.frontmatter.tags) 
+    ? p.frontmatter.tags 
+    : (p.frontmatter.tags ? p.frontmatter.tags.split(',') : [])
+}));
+---
+
+<Layout title="I Miei Progetti | Developer Portfolio">
+  <h1>I Miei Progetti</h1>
+  <p>Gestiti in tempo reale dal pannello di controllo Admin:</p>
+
+  {progetti.length === 0 ? (
+    <p>Nessun progetto trovato. Aggiungine uno dal pannello <a href="/admin">/admin</a>!</p>
+  ) : (
+    <div class="projects-list">
+      {progetti.map((p) => (
+        <div class="project-card">
+          <h3>{p.titolo}</h3>
+          <p>{p.descrizione}</p>
+          <div class="tags">
+            {p.tags.map((tag) => <span class="tag">{tag.trim()}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+</Layout>
+
+<style>
+  .projects-list { display: flex; flex-direction: column; gap: 20px; margin-top: 30px; }
+  .project-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; }
+  .project-card h3 { margin-top: 0; color: var(--accent-color); }
+  .tags { display: flex; gap: 8px; margin-top: 15px; }
+  .tag { background: #090d16; color: #94a3b8; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; }
+</style>

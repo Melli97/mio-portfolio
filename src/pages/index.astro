@@ -1,11 +1,69 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home | Il Mio Portfolio Developer">
+  <section class="hero">
+    <h1>Ciao, sono uno <span class="highlight">Sviluppatore Web Junior</span> 👋</h1>
+    <p class="subtitle">
+      Realizzo siti e applicazioni web ad altissime prestazioni, veloci, sicuri e ottimizzati per la SEO.
+    </p>
+  </section>
+
+  <section class="skills">
+    <h2>Le mie competenze tecnologiche</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML5 & CSS3</div>
+      <div class="skill-card">JavaScript (ES6+)</div>
+      <div class="skill-card">Astro.js</div>
+      <div class="skill-card">React (Basi)</div>
+      <div class="skill-card">Git & GitHub</div>
+      <div class="skill-card">SEO & Web Performance</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Hai un progetto in mente?</h2>
+    <p>Sono disponibile per collaborazioni freelance e primi progetti vetrina.</p>
+    <a href="/contatti" class="btn">Parliamone!</a>
+  </section>
 </Layout>
+
+<style>
+  .highlight { color: var(--accent-color); }
+  .hero { margin-bottom: 40px; }
+  h1 { font-size: 2.2rem; margin-bottom: 10px; }
+  .subtitle { font-size: 1.2rem; color: #cbd5e1; }
+  .skills { margin-bottom: 40px; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .cta {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #0f172a;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+</style>
