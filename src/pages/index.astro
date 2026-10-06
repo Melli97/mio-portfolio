@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import homeData from '../content/pages/home.json';
+
 ---
 
 <Layout title="Home | Il Mio Portfolio Developer">
   <section class="hero">
-    <h1>Ciao, sono uno <span class="highlight">Sviluppatore Web Junior</span> 👋</h1>
+    <h1>{homeData.heroTitle}</span> 👋</h1>
     <p class="subtitle">
-      Realizzo siti e applicazioni web ad altissime prestazioni, veloci, sicuri e ottimizzati per la SEO.
+      {homeData.heroDescription}
     </p>
   </section>
 
