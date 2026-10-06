@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "progetti"
+    label: "Progetti Portfolio"
+    folder: "src/content/progetti"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "titolo", widget: "string" }
+      - { label: "Descrizione", name: "descrizione", widget: "text" }
+      - { label: "Tecnologie / Tags", name: "tags", widget: "list" }
