@@ -10,6 +10,22 @@ const { title = "Junior Web Developer | Portfolio" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+
+    // Se la pagina viene caricata con un token nell'URL dall'email, apre subito il popup
+    if (window.location.hash.includes("recovery_token") || window.location.hash.includes("invite_token")) {
+      window.netlifyIdentity.open();
+    }
+  }
+</script>
   </head>
   <body>
     <header>
