@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Questa funzione legge automaticamente tutti i contenuti salvati dal pannello Admin nella cartella src/content/progetti
-const progettiCMS = await Astro.glob('../content/progetti/*.md');
+// Sostituito Astro.glob() con import.meta.glob() compatibile con Astro v5+
+const projectFiles = import.meta.glob('../content/progetti/*.md', { eager: true });
+const progettiCMS = Object.values(projectFiles) as any[];
 
 // Formattiamo i dati letti dal CMS
 const progetti = progettiCMS.map(p => ({
