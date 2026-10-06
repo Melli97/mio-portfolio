@@ -6,12 +6,73 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "progetti"
-    label: "Progetti Portfolio"
-    folder: "src/content/progetti"
+  # --------------------------------------------------------
+  # 1. GESTIONE PROGETTI (Collezione di più elementi)
+  # --------------------------------------------------------
+  - name: "projects"
+    label: "📁 Progetti Portfolio"
+    folder: "src/content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Titolo", name: "titolo", widget: "string" }
-      - { label: "Descrizione", name: "descrizione", widget: "text" }
-      - { label: "Tecnologie / Tags", name: "tags", widget: "list" }
+      - { label: "Titolo Progetto", name: "title", widget: "string" }
+      - { label: "Descrizione Breve", name: "description", widget: "text" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Immagine di Copertina", name: "image", widget: "image", required: false }
+      - { label: "Tag / Tecnologie", name: "tags", widget: "list", required: false }
+      - { label: "Link Demo / Sito", name: "link", widget: "string", required: false }
+      - { label: "Link GitHub", name: "github", widget: "string", required: false }
+      - { label: "Contenuto Esteso", name: "body", widget: "markdown" }
+
+  # --------------------------------------------------------
+  # 2. GESTIONE PAGINE E CONTENUTI GLOBALI (File Singoli)
+  # --------------------------------------------------------
+  - name: "pages"
+    label: "📄 Pagine e Sezioni Sito"
+    files:
+      # --- PAGINA HOME / HERO ---
+      - label: "Homepage & Hero Section"
+        name: "home"
+        file: "src/content/pages/home.json"
+        fields:
+          - { label: "Titolo Principale (Hero)", name: "heroTitle", widget: "string" }
+          - { label: "Sottotitolo / Ruolo", name: "heroSubtitle", widget: "string" }
+          - { label: "Descrizione di Benvenuto", name: "heroDescription", widget: "text" }
+          - { label: "Foto Profilo / Avatar", name: "avatarImage", widget: "image", required: false }
+          - { label: "Testo Pulsante CTA", name: "ctaText", widget: "string", required: false }
+
+      # --- PAGINA CHI SONO / BIOGRAFIA ---
+      - label: "Sezione Chi Sono (About)"
+        name: "about"
+        file: "src/content/pages/about.json"
+        fields:
+          - { label: "Titolo Sezione", name: "title", widget: "string" }
+          - { label: "Biografia / Storia", name: "bio", widget: "markdown" }
+          - { label: "Anni di Esperienza", name: "experienceYears", widget: "number", value_type: "int", required: false }
+
+      # --- COMPETENZE / SKILLS ---
+      - label: "Competenze & Skill"
+        name: "skills"
+        file: "src/content/pages/skills.json"
+        fields:
+          - { label: "Titolo Sezione", name: "title", widget: "string" }
+          - { 
+              label: "Elenco Competenze", 
+              name: "skillList", 
+              widget: "list", 
+              fields: [
+                { label: "Nome Competenza", name: "name", widget: "string" },
+                { label: "Livello/Categoria", name: "category", widget: "string", required: false }
+              ]
+            }
+
+      # --- CONTATTI E LINK SOCIAL ---
+      - label: "Contatti & Social"
+        name: "contact"
+        file: "src/content/pages/contact.json"
+        fields:
+          - { label: "Email di Contatto", name: "email", widget: "string" }
+          - { label: "Telefono", name: "phone", widget: "string", required: false }
+          - { label: "Profilo GitHub", name: "githubUrl", widget: "string", required: false }
+          - { label: "Profilo LinkedIn", name: "linkedinUrl", widget: "string", required: false }
+          - { label: "Testo Footer", name: "footerText", widget: "string", required: false }
