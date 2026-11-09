@@ -5,6 +5,7 @@ import homeData from '../content/pages/home.json';
 
 <Layout title="Home | Marcello Melli - Backend Developer">
   <section class="hero">
+    <div class="status-badge">Disponibile per nuove opportunità</div>
     <h1><span>{homeData.heroTitle}</span></h1>
     <p class="subtitle">
       {homeData.heroDescription}
@@ -115,8 +116,22 @@ import homeData from '../content/pages/home.json';
 </Layout>
 
 <style>
-  .highlight { color: var(--accent-color); }
   .hero { margin-bottom: 40px; }
+  
+  /* Badge di stato lavorativo */
+  .status-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color, #38bdf8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.3px;
+  }
+
   h1 { font-size: 2.2rem; margin-bottom: 10px; }
   .subtitle { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 20px; }
   
@@ -141,6 +156,11 @@ import homeData from '../content/pages/home.json';
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .skill-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color, #38bdf8);
   }
 
   /* Stili per la sezione Progetti in Evidenza */
@@ -153,6 +173,11 @@ import homeData from '../content/pages/home.json';
     padding: 25px;
     border-radius: 12px;
     margin-top: 20px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .project-card-featured:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color, #38bdf8);
   }
   .project-card-featured h3 {
     font-size: 1.3rem;
