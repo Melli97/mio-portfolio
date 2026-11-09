@@ -5,7 +5,7 @@ import homeData from '../content/pages/home.json';
 
 <Layout title="Home | Marcello Melli - Backend Developer">
   <section class="hero">
-    <h1><span>{homeData.heroTitle}</span> 👋</h1>
+    <h1><span>{homeData.heroTitle}</span></h1>
     <p class="subtitle">
       {homeData.heroDescription}
     </p>
@@ -28,7 +28,7 @@ import homeData from '../content/pages/home.json';
     <h2>Chi Sono & Il Mio Percorso</h2>
     <div class="about-card">
       <p>
-        Sono uno <strong>Sviluppatore Backend</strong> con una solida formazione in <strong>Ingegneria Informatica</strong> e un percorso focalizzato sulla digitalizzazione dei processi aziendali, sull'integrazione di sistemi ERP e sullo sviluppo di architetture API veloci, asincrone e scalabili.
+        Sono uno <strong>Sviluppatore Backend</strong> con una solida formazione in <strong>Ingegneria Informatica</strong> e un percorso focalizzato sulla digitalizzazione dei processi aziendali, sull'integrazione di sistemi gestionali e sullo sviluppo di applicazioni web e API scalabili.
       </p>
       
       <div class="experience-highlights">
@@ -40,15 +40,15 @@ import homeData from '../content/pages/home.json';
           </li>
           <li>
             <div class="role-title"><strong>Junior Developer ERP</strong> — Infor2000 <em>(Modugno, BA) | Feb 2023 - Nov 2023</em></div>
-            <div class="role-desc">Personalizzazione e sviluppo applicativi per il gestionale ERP <strong>Gamma Enterprise (TeamSystem)</strong>. Ottimizzazione e digitalizzazione dei flussi di processo aziendali.</div>
+            <div class="role-desc">Personalizzazione e sviluppo applicativi per il gestionale ERP Gamma Enterprise (TeamSystem). Ottimizzazione e digitalizzazione dei flussi di processo aziendali.</div>
           </li>
           <li>
             <div class="role-title"><strong>Junior Developer & Ufficio Qualità</strong> — Master Italy srl <em>(Conversano, BA) | Feb 2020 - Lug 2021</em></div>
             <div class="role-desc">
               <ul class="inner-list">
-                <li>Ottimizzazione delle istruzioni di produzione (OPL).</li>
-                <li>Gestione e ottimizzazione del database OPL.</li>
-                <li>Analisi, redazione ed elaborazione OPL.</li>
+                <li>Ottimizzazione delle istruzioni di produzione.</li>
+                <li>Gestione e ottimizzazione del database dedicato.</li>
+                <li>Analisi, redazione ed elaborazione delle istruzioni operative.</li>
               </ul>
             </div>
           </li>
@@ -62,175 +62,10 @@ import homeData from '../content/pages/home.json';
       <div class="experience-highlights">
         <h3>Formazione & Certificazioni</h3>
         <ul class="education-list">
-          <li class="thesis-item">
-            🎓 <strong>Laurea Triennale in Ingegneria Informatica</strong> <em>(In Corso)</em>
-            <div class="thesis-box">
-              <h4>📘 Tesi di Laurea: Progettazione e Implementazione di un'Architettura Backend Asincrona REST API con FastAPI e Integrazione AI</h4>
-              <p>
-                Elaborato finale focalizzato sull'applicazione rigorosa dei principi di <strong>Ingegneria del Software</strong> per la realizzazione di una TodoApp ad alte prestazioni. 
-              </p>
-              <ul class="thesis-points">
-                <li>⚡ <strong>Architettura Asincrona & REST:</strong> Sviluppo in Python 3.11+ con FastAPI (ASGI, asyncio) per abbattere i colli di bottiglia I/O-bound (&lt;100ms risposta) e validazione rigida con Pydantic.</li>
-                <li>🔒 <strong>Sicurezza & RBAC:</strong> Hashing password con bcrypt, autenticazione JWT, isolamento logico dei dati (multi-tenancy) e controllo ruoli (RBAC).</li>
-                <li>🧠 <strong>Integrazione AI:</strong> Categorizzazione automatica dei task in tempo reale tramite integrazione asincrona con l'LLM <code>gemini-2.5-flash</code>.</li>
-                <li>🏗️ <strong>Design Pattern & Testing:</strong> Layered Architecture (Router, Service, Data Access), Dependency Injection, Repository Pattern, migrazioni DB con Alembic e suite di test automatici (pytest/testdb).</li>
-              </ul>
-            </div>
+          <li>
+            <strong>Laurea Triennale in Ingegneria Informatica</strong> <em>(Ottobre 2026)</em><br />
+            <small><strong>Tesi:</strong> Progettazione e sviluppo di un'applicazione web per la gestione dei task tramite framework asincrono FastAPI. Il progetto include lo sviluppo backend in ambiente Python, la validazione dei dati con Pydantic, la sicurezza basata su token, la gestione di un database relazionale e l'integrazione di un sistema con intelligenza artificiale per scomporre automaticamente ogni attività in quattro sottocompiti al fine di agevolarne la risoluzione.</small>
           </li>
           <li>
-            🚀 <strong>Full Stack Developer Bootcamp</strong> — Aulab <em>(Giugno 2022)</em><br />
-            <small>Corso pratico di tre mesi in cui ho contribuito a un project work per la realizzazione di un portale di annunci, utilizzando metodologie Agile (Scrum), gestione del backlog, sviluppo iterativo e testing continuo.</small>
-          </li>
-          <li>
-            ⚙️ <strong>High Technician 4.0</strong> — ITS Cuccovillo BA <em>(2020 - 2022)</em><br />
-            <small>Corso di formazione avanzato focalizzato su tecnologie innovative, programmazione e gestione dei progetti in ambito IT, con tirocini in aziende partner e competenze in sistemi ERP.</small>
-          </li>
-          <li>
-            🏫 <strong>Diploma Tecnico in Informatica e Telecomunicazioni</strong> — ITIS Da Vinci - Galilei BA
-          </li>
-        </ul>
-      </div>
-
-      <div class="actions">
-        <a href="https://github.com/Melli97" target="_blank" rel="noopener noreferrer" class="btn">
-          💻 Esplora il mio GitHub
-        </a>
-      </div>
-    </div>
-  </section>
-</Layout>
-
-<style>
-  .highlight { color: var(--accent-color); }
-  .hero { margin-bottom: 40px; }
-  h1 { font-size: 2.2rem; margin-bottom: 10px; }
-  .subtitle { font-size: 1.2rem; color: #cbd5e1; }
-  .skills { margin-bottom: 40px; }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-  .skill-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .about-section { margin-bottom: 40px; }
-  .about-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    border-radius: 12px;
-    line-height: 1.6;
-  }
-  .about-card p { margin-bottom: 15px; color: #cbd5e1; }
-  .about-card strong { color: var(--accent-color, #38bdf8); }
-  
-  .experience-highlights {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-  }
-  .experience-highlights h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #f8fafc;
-  }
-  
-  .timeline, .education-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .timeline li {
-    margin-bottom: 18px;
-    padding-left: 15px;
-    border-left: 2px solid var(--accent-color, #38bdf8);
-  }
-  .role-title { color: #f8fafc; font-size: 0.95rem; }
-  .role-title em { color: #94a3b8; font-size: 0.85rem; }
-  .role-desc { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
-  
-  .inner-list {
-    margin: 6px 0 0 15px;
-    padding: 0;
-    list-style-type: disc;
-  }
-  .inner-list li {
-    border-left: none;
-    padding-left: 0;
-    margin-bottom: 3px;
-  }
-
-  .education-list li {
-    margin-bottom: 18px;
-    color: #cbd5e1;
-    font-size: 0.95rem;
-  }
-  .education-list small {
-    display: block;
-    color: #94a3b8;
-    margin-top: 3px;
-    font-size: 0.85rem;
-  }
-
-  /* Stili dedicati per il box Tesi di Laurea */
-  .thesis-item {
-    margin-bottom: 25px !important;
-  }
-  .thesis-box {
-    background: #090d16;
-    border: 1px solid #1e293b;
-    border-left: 3px solid var(--accent-color, #38bdf8);
-    padding: 16px 20px;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-  .thesis-box h4 {
-    margin: 0 0 10px 0;
-    font-size: 1rem;
-    color: var(--accent-color, #38bdf8);
-  }
-  .thesis-box p {
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-    color: #cbd5e1;
-  }
-  .thesis-points {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .thesis-points li {
-    font-size: 0.88rem;
-    color: #94a3b8;
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
-  .thesis-points code {
-    background: #1e293b;
-    color: #38bdf8;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-  }
-
-  .actions { margin-top: 30px; }
-  .btn {
-    display: inline-block;
-    background: var(--accent-color, #0284c7);
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.2s;
-  }
-  .btn:hover { opacity: 0.9; }
-</style>
+            <strong>Full Stack Developer Bootcamp</strong> — Aulab <em>(Giugno 2022)</em><br />
+            <small>Corso pratico di tre mesi in cui ho contribuito a un project work per la realizzazione di un portale di annunci, utilizzando metodologie di lavoro collaborative, gestione delle attività
