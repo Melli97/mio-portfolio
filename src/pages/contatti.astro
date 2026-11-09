@@ -2,61 +2,233 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contattami | Developer Portfolio">
-  <h1>Contattami</h1>
-  <p>Vuoi propormi una collaborazione o richiedere un preventivo per un sito vetrina?</p>
+<Layout title="Contattami | Marcello Melli - Backend Developer">
+  <section class="contact-header">
+    <h1>Contattami</h1>
+    <p class="subtitle">
+      Sei interessato a una collaborazione, desideri discutere un progetto backend o vuoi semplicemente entrare in contatto professionale? Inviami un messaggio o utilizza i canali diretti indicati di seguito.
+    </p>
+  </section>
 
-  <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-    <!-- Inserisci qui la tua Access Key gratuita da web3forms.com se vuoi testare l'invio mail reale -->
-    <input type="hidden" name="access_key" value="TUA_ACCESS_KEY_WEB3FORMS" />
+  <div class="contact-grid">
+    <!-- Colonna 1: Informazioni e Link Diretti -->
+    <div class="contact-info-card">
+      <h2>Informazioni di Contatto</h2>
+      <p>Sono sempre aperto a nuove opportunità lavorative, progetti in remoto e collaborazioni tecniche.</p>
+      
+      <ul class="info-list">
+        <li>
+          <span class="info-label">Email Professionale:</span>
+          <a href="mailto:marcellomelli9@gmail.com" class="info-link">marcellomelli9@gmail.com</a>
+        </li>
+        <li>
+          <span class="info-label">LinkedIn:</span>
+          <a href="https://www.linkedin.com/in/marcellomelli/" target="_blank" rel="noopener noreferrer" class="info-link">linkedin.com/in/marcellomelli</a>
+        </li>
+        <li>
+          <span class="info-label">GitHub:</span>
+          <a href="https://github.com/Melli97" target="_blank" rel="noopener noreferrer" class="info-link">github.com/Melli97</a>
+        </li>
+        <li>
+          <span class="info-label">Disponibilità:</span>
+          <span class="info-value">Full-time / Part-time / Remote</span>
+        </li>
+      </ul>
 
-    <div class="field">
-      <label for="nome">Nome / Azienda</label>
-      <input type="text" id="nome" name="nome" required placeholder="Es. Mario Rossi" />
+      <div class="cv-download-box">
+        <h3>Curriculum Vitae</h3>
+        <p>Scarica una copia aggiornata del mio CV in formato PDF.</p>
+        <a href="/MelliCV10.pdf" download class="btn primary-btn">Scarica il mio CV (PDF)</a>
+      </div>
     </div>
 
-    <div class="field">
-      <label for="email">Indirizzo Email</label>
-      <input type="email" id="email" name="email" required placeholder="mario@example.com" />
-    </div>
+    <!-- Colonna 2: Form di Contatto -->
+    <div class="contact-form-card">
+      <h2>Invia un Messaggio</h2>
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <!-- Sostituisci TUA_ACCESS_KEY_WEB3FORMS con la tua chiave Web3Forms -->
+        <input type="hidden" name="access_key" value="TUA_ACCESS_KEY_WEB3FORMS" />
 
-    <div class="field">
-      <label for="messaggio">Messaggio</label>
-      <textarea id="messaggio" name="messaggio" rows="5" required placeholder="Descrivi brevemente la tua richiesta..."></textarea>
-    </div>
+        <div class="field">
+          <label for="nome">Nome o Azienda</label>
+          <input type="text" id="nome" name="nome" required placeholder="Es. Mario Rossi" />
+        </div>
 
-    <button type="submit">Invia Messaggio</button>
-  </form>
+        <div class="field">
+          <label for="email">Indirizzo Email</label>
+          <input type="email" id="email" name="email" required placeholder="mario@example.com" />
+        </div>
+
+        <div class="field">
+          <label for="oggetto">Oggetto</label>
+          <input type="text" id="oggetto" name="oggetto" placeholder="Es. Proposta di collaborazione / Informazioni" />
+        </div>
+
+        <div class="field">
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="5" required placeholder="Descrivi brevemente la tua richiesta..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Invia Messaggio</button>
+      </form>
+    </div>
+  </div>
 </Layout>
 
 <style>
-  .contact-form {
+  .contact-header {
+    margin-bottom: 30px;
+  }
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .contact-info-card, .contact-form-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     padding: 25px;
-    border-radius: 8px;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    color: #f8fafc;
+    margin-bottom: 15px;
+  }
+
+  .contact-info-card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+  }
+
+  .info-list li {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .info-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  .info-link {
+    color: var(--accent-color, #38bdf8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    word-break: break-all;
+  }
+
+  .info-link:hover {
+    text-decoration: underline;
+  }
+
+  .info-value {
+    color: #f8fafc;
+    font-size: 0.95rem;
+  }
+
+  .cv-download-box {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
     margin-top: 20px;
+  }
+
+  .cv-download-box h3 {
+    font-size: 1.1rem;
+    color: #f8fafc;
+    margin-bottom: 8px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent-color, #0284c7);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    transition: opacity 0.2s;
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Stili Form */
+  .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
-  .field { display: flex; flex-direction: column; gap: 5px; }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+
   input, textarea {
-    background: #0f172a;
+    background: #090d16;
     border: 1px solid var(--border-color);
     color: #fff;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 1rem;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
   }
-  button {
-    background: var(--accent-color);
-    color: #0f172a;
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color, #38bdf8);
+  }
+
+  .submit-btn {
+    background: var(--accent-color, #0284c7);
+    color: #ffffff;
     padding: 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.95rem;
     cursor: pointer;
+    margin-top: 10px;
+    transition: opacity 0.2s;
+  }
+
+  .submit-btn:hover {
+    opacity: 0.9;
   }
 </style>
