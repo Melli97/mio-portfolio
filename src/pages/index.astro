@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import homeData from '../content/pages/home.json';
-
 ---
 
-<Layout title="Home | Il Mio Portfolio Developer">
+<Layout title="Home | Marcello Melli - Backend Developer">
   <section class="hero">
     <h1><span>{homeData.heroTitle}</span> 👋</h1>
     <p class="subtitle">
@@ -15,19 +14,71 @@ import homeData from '../content/pages/home.json';
   <section class="skills">
     <h2>Le mie competenze tecnologiche</h2>
     <div class="skills-grid">
-      <div class="skill-card">Python</div>
-      <div class="skill-card">FastAPI </div>
-      <div class="skill-card">Architettura REST API</div>
-      <div class="skill-card">React (Basi)</div>
-      <div class="skill-card">Git & GitHub</div>
-      <div class="skill-card">Pydantic (Validazione Dati)</div>
+      <div class="skill-card">Python & FastAPI</div>
+      <div class="skill-card">REST API & Pydantic</div>
+      <div class="skill-card">SQL & ERP (Gamma TeamSystem)</div>
+      <div class="skill-card">SQLAlchemy & Database</div>
+      <div class="skill-card">Git & Agile (Scrum)</div>
+      <div class="skill-card">React & Frontend Basics</div>
     </div>
   </section>
 
-  <section class="cta">
-    <h2>Hai un progetto in mente?</h2>
-    <p>Sono disponibile per collaborazioni freelance e primi progetti vetrina.</p>
-    <a href="/contatti" class="btn">Parliamone!</a>
+  <!-- Sezione Chi Sono & Esperienza -->
+  <section class="about-section">
+    <h2>Chi Sono & Il Mio Percorso</h2>
+    <div class="about-card">
+      <p>
+        Sono uno <strong>Sviluppatore Backend</strong> con una solida formazione in <strong>Ingegneria Informatica</strong> e un percorso focalizzato sulla digitalizzazione dei processi aziendali, sull'integrazione di sistemi ERP e sullo sviluppo di architetture API veloci e scalabili.
+      </p>
+      
+      <div class="experience-highlights">
+        <h3>Esperienza Professionale</h3>
+        <ul class="timeline">
+          <li>
+            <div class="role-title"><strong>Junior Developer</strong> — Calton <em>(Remoto)</em></div>
+            <div class="role-desc">Sviluppo ed evoluzione di applicativi e moduli software.</div>
+          </li>
+          <li>
+            <div class="role-title"><strong>Junior Developer ERP</strong> — Infor2000 <em>(Modugno, BA) | Feb 2023 - Nov 2023</em></div>
+            <div class="role-desc">Personalizzazione e sviluppo applicativi per il gestionale ERP <strong>Gamma Enterprise (TeamSystem)</strong>. Ottimizzazione e digitalizzazione dei flussi di processo aziendali.</div>
+          </li>
+          <li>
+            <div class="role-title"><strong>Junior Developer & Ufficio Qualità</strong> — Master Italy srl <em>(Conversano, BA) | Feb 2020 - Lug 2021</em></div>
+            <div class="role-desc">Analisi, redazione e ottimizzazione delle istruzioni di produzione (OPL) e gestione del relativo database per il miglioramento dei processi produttivi.</div>
+          </li>
+          <li>
+            <div class="role-title"><strong>Esperienza Internazionale</strong> — Nando’s Restaurant <em>(Cambridge, UK) | Gen 2017 - Ago 2017</em></div>
+            <div class="role-desc">Esperienza lavorativa post-diploma per il perfezionamento della lingua inglese, il lavoro in team dinamici e la gestione del cliente in contesto internazionale.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-highlights">
+        <h3>Formazione & Certificazioni</h3>
+        <ul class="education-list">
+          <li>
+            🎓 <strong>Laurea Triennale in Ingegneria Informatica</strong> <em>(Feb 2026 - In Corso)</em>
+          </li>
+          <li>
+            🚀 <strong>Full Stack Developer Bootcamp</strong> — hackademy <em>(Giugno 2022)</em><br />
+            <small>Sviluppo pratico con metodologie Agile (Scrum), gestione della backlog, sprint iterativi e continuous testing su project work reale.</small>
+          </li>
+          <li>
+            ⚙️ <strong>High Technician 4.0</strong> — ITS Cuccovillo BA <em>(2020 - 2022)</em><br />
+            <small>Formazione avanzata su tecnologie Industria 4.0, programmazione, sistemi ERP e tirocini in aziende partner.</small>
+          </li>
+          <li>
+            🏫 <strong>Diploma Tecnico in Informatica e Telecomunicazioni</strong> — ITIS Da Vinci - Galilei BA
+          </li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <a href="https://github.com/Melli97" target="_blank" rel="noopener noreferrer" class="btn">
+          💻 Esplora il mio GitHub
+        </a>
+      </div>
+    </div>
   </section>
 </Layout>
 
@@ -51,21 +102,65 @@ import homeData from '../content/pages/home.json';
     text-align: center;
     font-weight: bold;
   }
-  .cta {
+  
+  .about-section { margin-bottom: 40px; }
+  .about-card {
     background: var(--card-bg);
-    border: 1px solid var(--accent-color);
-    padding: 30px;
+    border: 1px solid var(--border-color);
+    padding: 25px;
     border-radius: 12px;
-    text-align: center;
+    line-height: 1.6;
   }
+  .about-card p { margin-bottom: 15px; color: #cbd5e1; }
+  .about-card strong { color: var(--accent-color, #38bdf8); }
+  
+  .experience-highlights {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+  }
+  .experience-highlights h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f8fafc;
+  }
+  
+  .timeline, .education-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .timeline li {
+    margin-bottom: 18px;
+    padding-left: 15px;
+    border-left: 2px solid var(--accent-color, #38bdf8);
+  }
+  .role-title { color: #f8fafc; font-size: 0.95rem; }
+  .role-title em { color: #94a3b8; font-size: 0.85rem; }
+  .role-desc { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
+  
+  .education-list li {
+    margin-bottom: 15px;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+  .education-list small {
+    display: block;
+    color: #94a3b8;
+    margin-top: 3px;
+    font-size: 0.85rem;
+  }
+  
+  .actions { margin-top: 30px; }
   .btn {
     display: inline-block;
-    background: var(--accent-color);
-    color: #0f172a;
-    padding: 10px 25px;
+    background: var(--accent-color, #0284c7);
+    color: #ffffff;
+    padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 15px;
+    transition: opacity 0.2s;
   }
+  .btn:hover { opacity: 0.9; }
 </style>
