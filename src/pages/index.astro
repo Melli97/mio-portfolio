@@ -131,4 +131,152 @@ import homeData from '../content/pages/home.json';
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Stili per la sezione Progetti in Evidenza */
+  .projects-section {
+    margin-bottom: 40px;
+  }
+  .project-card-featured {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+  .project-card-featured h3 {
+    font-size: 1.3rem;
+    color: #f8fafc;
+    margin-bottom: 10px;
+  }
+  .project-card-featured p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .tech-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .tech-tags span {
+    background: #1e293b;
+    color: var(--accent-color, #38bdf8);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  .project-links {
+    display: flex;
+    gap: 10px;
+  }
+  .btn-sm {
+    display: inline-block;
+    background: #1e293b;
+    color: #f8fafc;
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  .btn-sm:hover {
+    background: #334155;
+  }
+  
+  .about-section { margin-bottom: 40px; }
+  .about-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 12px;
+    line-height: 1.6;
+  }
+  .about-card p { margin-bottom: 15px; color: #cbd5e1; }
+  .about-card strong { color: var(--accent-color, #38bdf8); }
+  
+  .experience-highlights {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+  }
+  .experience-highlights h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f8fafc;
+  }
+  
+  .timeline, .education-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .timeline li {
+    margin-bottom: 18px;
+    padding-left: 15px;
+    border-left: 2px solid var(--accent-color, #38bdf8);
+  }
+  .role-title { color: #f8fafc; font-size: 0.95rem; }
+  .role-title em { color: #94a3b8; font-size: 0.85rem; }
+  .role-desc { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
+  
+  .inner-list {
+    margin: 6px 0 0 15px;
+    padding: 0;
+    list-style-type: disc;
+  }
+  .inner-list li {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 3px;
+  }
+
+  .education-list li {
+    margin-bottom: 18px;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+  .education-list small {
+    display: block;
+    color: #94a3b8;
+    margin-top: 3px;
+    font-size: 0.85rem;
+  }
+  
+  .actions { margin-top: 30px; }
+  .btn {
+    display: inline-block;
+    background: var(--accent-color, #0284c7);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.9; }
+  
+  .secondary-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: #f8fafc;
+  }
+  .secondary-btn:hover {
+    background: #1e293b;
+  }
+</style>
