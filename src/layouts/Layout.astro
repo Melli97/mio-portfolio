@@ -1,6 +1,6 @@
 ---
 // src/layouts/Layout.astro
-const { title = "Junior Web Developer | Portfolio" } = Astro.props;
+const { title = "Marcello Melli | Backend Developer" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -9,28 +9,31 @@ const { title = "Junior Web Developer | Portfolio" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
         });
-      }
-    });
 
-    // Se la pagina viene caricata con un token nell'URL dall'email, apre subito il popup
-    if (window.location.hash.includes("recovery_token") || window.location.hash.includes("invite_token")) {
-      window.netlifyIdentity.open();
-    }
-  }
-</script>
+        // Inizializza il widget in ascolto sull'URL
+        window.netlifyIdentity.init();
+
+        // Se la pagina viene caricata con un token nell'URL (es. reset password), apre subito il popup
+        if (window.location.hash.includes("recovery_token") || window.location.hash.includes("invite_token")) {
+          window.netlifyIdentity.open();
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
       <nav class="container">
-        <a href="/" class="logo">Dev.Portfolio</a>
+        <a href="/" class="logo">Marcello Melli</a>
         <div class="nav-links">
           <a href="/">Home</a>
           <a href="/progetti">Progetti</a>
@@ -44,7 +47,7 @@ const { title = "Junior Web Developer | Portfolio" } = Astro.props;
     </main>
 
     <footer class="container">
-      <p>&copy; {new Date().getFullYear()} Sviluppato con Astro.js — Nessun server da gestire!</p>
+      <p>&copy; {new Date().getFullYear()} Marcello Melli — Backend Developer</p>
     </footer>
   </body>
 </html>
