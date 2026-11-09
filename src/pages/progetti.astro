@@ -9,15 +9,17 @@ const progettiCMS = Object.values(projectFiles) as any[];
 const progetti = progettiCMS.map(p => ({
   titolo: p.frontmatter.titolo,
   descrizione: p.frontmatter.descrizione,
+  github: p.frontmatter.github,
+  link: p.frontmatter.link,
   tags: Array.isArray(p.frontmatter.tags) 
     ? p.frontmatter.tags 
     : (p.frontmatter.tags ? p.frontmatter.tags.split(',') : [])
 }));
 ---
 
-<Layout title="I Miei Progetti | Developer Portfolio">
+<Layout title="I Miei Progetti | Marcello Melli">
   <h1>I Miei Progetti</h1>
-  <p>Gestiti in tempo reale dal pannello di controllo Admin:</p>
+  <p>Progetti backend, architetture API e repository sviluppate con Python e FastAPI.</p>
 
   {progetti.length === 0 ? (
     <p>Nessun progetto trovato. Aggiungine uno dal pannello <a href="/admin">/admin</a>!</p>
@@ -27,8 +29,22 @@ const progetti = progettiCMS.map(p => ({
         <div class="project-card">
           <h3>{p.titolo}</h3>
           <p>{p.descrizione}</p>
+          
           <div class="tags">
-            {p.tags.map((tag) => <span class="tag">{tag.trim()}</span>)}
+            {p.tags.map((tag: string) => <span class="tag">{tag.trim()}</span>)}
+          </div>
+
+          <div class="project-links">
+            {p.github && (
+              <a href={p.github} target="_blank" rel="noopener noreferrer" class="btn-link">
+                💻 Repository GitHub
+              </a>
+            )}
+            {p.link && (
+              <a href={p.link} target="_blank" rel="noopener noreferrer" class="btn-link secondary">
+                🚀 Live Demo / Swagger Docs
+              </a>
+            )}
           </div>
         </div>
       ))}
@@ -40,6 +56,23 @@ const progetti = progettiCMS.map(p => ({
   .projects-list { display: flex; flex-direction: column; gap: 20px; margin-top: 30px; }
   .project-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; }
   .project-card h3 { margin-top: 0; color: var(--accent-color); }
-  .tags { display: flex; gap: 8px; margin-top: 15px; }
-  .tag { background: #090d16; color: #94a3b8; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+  .tag { background: #090d16; color: #38bdf8; border: 1px solid #1e293b; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 500; }
+  
+  .project-links { display: flex; gap: 12px; margin-top: 20px; }
+  .btn-link { 
+    display: inline-block; 
+    padding: 8px 14px; 
+    background-color: var(--accent-color, #0284c7); 
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 6px; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+  }
+  .btn-link.secondary { 
+    background-color: transparent; 
+    border: 1px solid var(--border-color, #334155); 
+    color: #94a3b8; 
+  }
 </style>
