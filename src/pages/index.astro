@@ -28,15 +28,15 @@ import homeData from '../content/pages/home.json';
     <h2>Chi Sono & Il Mio Percorso</h2>
     <div class="about-card">
       <p>
-        Sono uno <strong>Sviluppatore Backend</strong> con una solida formazione in <strong>Ingegneria Informatica</strong> e un percorso focalizzato sulla digitalizzazione dei processi aziendali, sull'integrazione di sistemi ERP e sullo sviluppo di architetture API veloci e scalabili.
+        Sono uno <strong>Sviluppatore Backend</strong> con una solida formazione in <strong>Ingegneria Informatica</strong> e un percorso focalizzato sulla digitalizzazione dei processi aziendali, sull'integrazione di sistemi ERP e sullo sviluppo di architetture API veloci, asincrone e scalabili.
       </p>
       
       <div class="experience-highlights">
         <h3>Esperienza Professionale</h3>
         <ul class="timeline">
           <li>
-            <div class="role-title"><strong>Junior Developer</strong> — Calton <em>(Remoto)</em></div>
-            <div class="role-desc">Sviluppo ed evoluzione di applicativi e moduli software.</div>
+            <div class="role-title"><strong>Junior Developer</strong> — Calton <em>(Remoto) | Feb 2026 - In Corso</em></div>
+            <div class="role-desc">Studio e utilizzo di Python e FastAPI per lo sviluppo backend completo e la creazione di API REST.</div>
           </li>
           <li>
             <div class="role-title"><strong>Junior Developer ERP</strong> — Infor2000 <em>(Modugno, BA) | Feb 2023 - Nov 2023</em></div>
@@ -44,11 +44,17 @@ import homeData from '../content/pages/home.json';
           </li>
           <li>
             <div class="role-title"><strong>Junior Developer & Ufficio Qualità</strong> — Master Italy srl <em>(Conversano, BA) | Feb 2020 - Lug 2021</em></div>
-            <div class="role-desc">Analisi, redazione e ottimizzazione delle istruzioni di produzione (OPL) e gestione del relativo database per il miglioramento dei processi produttivi.</div>
+            <div class="role-desc">
+              <ul class="inner-list">
+                <li>Ottimizzazione delle istruzioni di produzione (OPL).</li>
+                <li>Gestione e ottimizzazione del database OPL.</li>
+                <li>Analisi, redazione ed elaborazione OPL.</li>
+              </ul>
+            </div>
           </li>
           <li>
             <div class="role-title"><strong>Esperienza Internazionale</strong> — Nando’s Restaurant <em>(Cambridge, UK) | Gen 2017 - Ago 2017</em></div>
-            <div class="role-desc">Esperienza lavorativa post-diploma per il perfezionamento della lingua inglese, il lavoro in team dinamici e la gestione del cliente in contesto internazionale.</div>
+            <div class="role-desc">Ho lavorato, subito dopo essermi diplomato, a Cambridge in UK per imparare e migliorare il mio inglese, lavorando in team e soddisfacendo i clienti con dedizione e organizzazione.</div>
           </li>
         </ul>
       </div>
@@ -56,16 +62,28 @@ import homeData from '../content/pages/home.json';
       <div class="experience-highlights">
         <h3>Formazione & Certificazioni</h3>
         <ul class="education-list">
-          <li>
-            🎓 <strong>Laurea Triennale in Ingegneria Informatica</strong> <em>(Feb 2026 - In Corso)</em>
+          <li class="thesis-item">
+            🎓 <strong>Laurea Triennale in Ingegneria Informatica</strong> <em>(In Corso)</em>
+            <div class="thesis-box">
+              <h4>📘 Tesi di Laurea: Progettazione e Implementazione di un'Architettura Backend Asincrona REST API con FastAPI e Integrazione AI</h4>
+              <p>
+                Elaborato finale focalizzato sull'applicazione rigorosa dei principi di <strong>Ingegneria del Software</strong> per la realizzazione di una TodoApp ad alte prestazioni. 
+              </p>
+              <ul class="thesis-points">
+                <li>⚡ <strong>Architettura Asincrona & REST:</strong> Sviluppo in Python 3.11+ con FastAPI (ASGI, asyncio) per abbattere i colli di bottiglia I/O-bound (&lt;100ms risposta) e validazione rigida con Pydantic.</li>
+                <li>🔒 <strong>Sicurezza & RBAC:</strong> Hashing password con bcrypt, autenticazione JWT, isolamento logico dei dati (multi-tenancy) e controllo ruoli (RBAC).</li>
+                <li>🧠 <strong>Integrazione AI:</strong> Categorizzazione automatica dei task in tempo reale tramite integrazione asincrona con l'LLM <code>gemini-2.5-flash</code>.</li>
+                <li>🏗️ <strong>Design Pattern & Testing:</strong> Layered Architecture (Router, Service, Data Access), Dependency Injection, Repository Pattern, migrazioni DB con Alembic e suite di test automatici (pytest/testdb).</li>
+              </ul>
+            </div>
           </li>
           <li>
-            🚀 <strong>Full Stack Developer Bootcamp</strong> — hackademy <em>(Giugno 2022)</em><br />
-            <small>Sviluppo pratico con metodologie Agile (Scrum), gestione della backlog, sprint iterativi e continuous testing su project work reale.</small>
+            🚀 <strong>Full Stack Developer Bootcamp</strong> — Aulab <em>(Giugno 2022)</em><br />
+            <small>Corso pratico di tre mesi in cui ho contribuito a un project work per la realizzazione di un portale di annunci, utilizzando metodologie Agile (Scrum), gestione del backlog, sviluppo iterativo e testing continuo.</small>
           </li>
           <li>
             ⚙️ <strong>High Technician 4.0</strong> — ITS Cuccovillo BA <em>(2020 - 2022)</em><br />
-            <small>Formazione avanzata su tecnologie Industria 4.0, programmazione, sistemi ERP e tirocini in aziende partner.</small>
+            <small>Corso di formazione avanzato focalizzato su tecnologie innovative, programmazione e gestione dei progetti in ambito IT, con tirocini in aziende partner e competenze in sistemi ERP.</small>
           </li>
           <li>
             🏫 <strong>Diploma Tecnico in Informatica e Telecomunicazioni</strong> — ITIS Da Vinci - Galilei BA
@@ -139,8 +157,19 @@ import homeData from '../content/pages/home.json';
   .role-title em { color: #94a3b8; font-size: 0.85rem; }
   .role-desc { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
   
+  .inner-list {
+    margin: 6px 0 0 15px;
+    padding: 0;
+    list-style-type: disc;
+  }
+  .inner-list li {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 3px;
+  }
+
   .education-list li {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     color: #cbd5e1;
     font-size: 0.95rem;
   }
@@ -150,7 +179,48 @@ import homeData from '../content/pages/home.json';
     margin-top: 3px;
     font-size: 0.85rem;
   }
-  
+
+  /* Stili dedicati per il box Tesi di Laurea */
+  .thesis-item {
+    margin-bottom: 25px !important;
+  }
+  .thesis-box {
+    background: #090d16;
+    border: 1px solid #1e293b;
+    border-left: 3px solid var(--accent-color, #38bdf8);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  .thesis-box h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: var(--accent-color, #38bdf8);
+  }
+  .thesis-box p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+  }
+  .thesis-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .thesis-points li {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .thesis-points code {
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
   .actions { margin-top: 30px; }
   .btn {
     display: inline-block;
