@@ -1,4 +1,4 @@
 ---
-titolo: test
-descrizione: Questa è una prova di pubblicazione tramite Decap CMS.
+titolo: "TodoApp & REST API"
+descrizione: "Applicazione Backend completa sviluppata con Python e FastAPI..."
 ---
