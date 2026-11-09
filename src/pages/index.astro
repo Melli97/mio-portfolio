@@ -9,6 +9,10 @@ import homeData from '../content/pages/home.json';
     <p class="subtitle">
       {homeData.heroDescription}
     </p>
+    <div class="hero-actions">
+      <a href="/MelliCV10.pdf" download class="btn primary-btn">Scarica il mio CV (PDF)</a>
+      <a href="#progetti" class="btn secondary-btn">Vedi Progetti</a>
+    </div>
   </section>
 
   <section class="skills">
@@ -20,6 +24,27 @@ import homeData from '../content/pages/home.json';
       <div class="skill-card">SQLAlchemy & Database</div>
       <div class="skill-card">Git & Agile (Scrum)</div>
       <div class="skill-card">React & Frontend Basics</div>
+    </div>
+  </section>
+
+  <!-- Sezione Progetti in Evidenza -->
+  <section id="progetti" class="projects-section">
+    <h2>Progetti in Evidenza</h2>
+    <div class="project-card-featured">
+      <h3>TodoApp & REST API Suite</h3>
+      <p>
+        Applicazione web backend avanzata sviluppata in Python con il framework asincrono FastAPI. Il sistema gestisce autenticazione sicura tramite token, database relazionali, validazione dei dati con Pydantic e un modulo basato su intelligenza artificiale per la scomposizione automatica dei task.
+      </p>
+      <div class="tech-tags">
+        <span>Python</span>
+        <span>FastAPI</span>
+        <span>Pydantic</span>
+        <span>SQLAlchemy</span>
+        <span>AI Integration</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Melli97/fastapi-books-api/tree/main/TodoApp" target="_blank" rel="noopener noreferrer" class="btn-sm">Codice su GitHub</a>
+      </div>
     </div>
   </section>
 
@@ -93,92 +118,17 @@ import homeData from '../content/pages/home.json';
   .highlight { color: var(--accent-color); }
   .hero { margin-bottom: 40px; }
   h1 { font-size: 2.2rem; margin-bottom: 10px; }
-  .subtitle { font-size: 1.2rem; color: #cbd5e1; }
+  .subtitle { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 20px; }
+  
+  .hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
   .skills { margin-bottom: 40px; }
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-  .skill-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .about-section { margin-bottom: 40px; }
-  .about-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    border-radius: 12px;
-    line-height: 1.6;
-  }
-  .about-card p { margin-bottom: 15px; color: #cbd5e1; }
-  .about-card strong { color: var(--accent-color, #38bdf8); }
-  
-  .experience-highlights {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-  }
-  .experience-highlights h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #f8fafc;
-  }
-  
-  .timeline, .education-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .timeline li {
-    margin-bottom: 18px;
-    padding-left: 15px;
-    border-left: 2px solid var(--accent-color, #38bdf8);
-  }
-  .role-title { color: #f8fafc; font-size: 0.95rem; }
-  .role-title em { color: #94a3b8; font-size: 0.85rem; }
-  .role-desc { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
-  
-  .inner-list {
-    margin: 6px 0 0 15px;
-    padding: 0;
-    list-style-type: disc;
-  }
-  .inner-list li {
-    border-left: none;
-    padding-left: 0;
-    margin-bottom: 3px;
-  }
-
-  .education-list li {
-    margin-bottom: 18px;
-    color: #cbd5e1;
-    font-size: 0.95rem;
-  }
-  .education-list small {
-    display: block;
-    color: #94a3b8;
-    margin-top: 3px;
-    font-size: 0.85rem;
-  }
-  
-  .actions { margin-top: 30px; }
-  .btn {
-    display: inline-block;
-    background: var(--accent-color, #0284c7);
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.2s;
-  }
-  .btn:hover { opacity: 0.9; }
-</style>
+    gap: 15px
